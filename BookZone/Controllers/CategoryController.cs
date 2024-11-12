@@ -1,5 +1,6 @@
-﻿using BookZone.Data;
-using BookZone.Models;
+﻿
+using BookZone.DataAccess.Data;
+using BookZone.Model;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BookZone.Controllers

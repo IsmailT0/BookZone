@@ -17,4 +17,8 @@
     <PackageReference Include="NuGet.Frameworks" Version="6.11.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\BookZone.DataAccess\BookZone.DataAccess.csproj" />
+  </ItemGroup>
+
 </Project>

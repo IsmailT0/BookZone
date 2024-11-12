@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v8.0": {
       "BookZone/1.0.0": {
         "dependencies": {
+          "BookZone.DataAccess": "1.0.0",
           "Microsoft.EntityFrameworkCore": "8.0.10",
           "Microsoft.EntityFrameworkCore.Tools": "8.0.10",
           "MySql.Data": "9.1.0",
@@ -726,6 +727,37 @@
             "fileVersion": "0.8.0.0"
           }
         }
+      },
+      "BookZone.DataAccess/1.0.0": {
+        "dependencies": {
+          "BookZone.Model": "1.0.0",
+          "BookZone.Utility": "1.0.0",
+          "MySql.Data": "9.1.0",
+          "MySql.EntityFrameworkCore": "8.0.8",
+          "NuGet.Frameworks": "6.11.1"
+        },
+        "runtime": {
+          "BookZone.DataAccess.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "BookZone.Model/1.0.0": {
+        "runtime": {
+          "BookZone.Model.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "BookZone.Utility/1.0.0": {
+        "runtime": {
+          "BookZone.Utility.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
       }
     }
   },
@@ -1189,6 +1221,21 @@
       "sha512": "sha512-Z62eNBIu8E8YtbqlMy57tK3dV1+m2b9NhPeaYovB5exmLKvrGCqOhJTzrEUH5VyUWU6vwX3c1XHJGhW5HVs8dA==",
       "path": "zstdsharp.port/0.8.0",
       "hashPath": "zstdsharp.port.0.8.0.nupkg.sha512"
+    },
+    "BookZone.DataAccess/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "BookZone.Model/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "BookZone.Utility/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     }
   }
 }

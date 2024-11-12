@@ -1,4 +1,5 @@
-using BookZone.Data;
+
+using BookZone.DataAccess.Data;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);

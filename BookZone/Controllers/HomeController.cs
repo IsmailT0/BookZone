@@ -1,4 +1,4 @@
-using BookZone.Models;
+using BookZone.Model;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 

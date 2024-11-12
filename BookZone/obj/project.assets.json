@@ -1238,6 +1238,43 @@
         "runtime": {
           "lib/net8.0/ZstdSharp.dll": {}
         }
+      },
+      "BookZone.DataAccess/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "BookZone.Model": "1.0.0",
+          "BookZone.Utility": "1.0.0",
+          "MySql.Data": "9.1.0",
+          "MySql.EntityFrameworkCore": "8.0.8",
+          "NuGet.Frameworks": "6.11.1"
+        },
+        "compile": {
+          "bin/placeholder/BookZone.DataAccess.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BookZone.DataAccess.dll": {}
+        }
+      },
+      "BookZone.Model/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/BookZone.Model.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BookZone.Model.dll": {}
+        }
+      },
+      "BookZone.Utility/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/BookZone.Utility.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BookZone.Utility.dll": {}
+        }
       }
     }
   },
@@ -3577,10 +3614,26 @@
         "zstdsharp.port.0.8.0.nupkg.sha512",
         "zstdsharp.port.nuspec"
       ]
+    },
+    "BookZone.DataAccess/1.0.0": {
+      "type": "project",
+      "path": "../BookZone.DataAccess/BookZone.DataAccess.csproj",
+      "msbuildProject": "../BookZone.DataAccess/BookZone.DataAccess.csproj"
+    },
+    "BookZone.Model/1.0.0": {
+      "type": "project",
+      "path": "../BookZone.Model/BookZone.Model.csproj",
+      "msbuildProject": "../BookZone.Model/BookZone.Model.csproj"
+    },
+    "BookZone.Utility/1.0.0": {
+      "type": "project",
+      "path": "../BookZone.Utility/BookZone.Utility.csproj",
+      "msbuildProject": "../BookZone.Utility/BookZone.Utility.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net8.0": [
+      "BookZone.DataAccess >= 1.0.0",
       "Microsoft.EntityFrameworkCore >= 8.0.10",
       "Microsoft.EntityFrameworkCore.Tools >= 8.0.10",
       "MySql.Data >= 9.1.0",
@@ -3620,7 +3673,11 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\ismai\\Desktop\\Created_API's while_learning\\BookZone\\BookZone.DataAccess\\BookZone.DataAccess.csproj": {
+              "projectPath": "C:\\Users\\ismai\\Desktop\\Created_API's while_learning\\BookZone\\BookZone.DataAccess\\BookZone.DataAccess.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

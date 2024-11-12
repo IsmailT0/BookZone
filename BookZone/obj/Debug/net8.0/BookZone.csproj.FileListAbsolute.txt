@@ -125,3 +125,9 @@ C:\Users\ismai\Desktop\Created_API's while_learning\BookZone\BookZone\obj\Debug\
 C:\Users\ismai\Desktop\Created_API's while_learning\BookZone\BookZone\obj\Debug\net8.0\BookZone.pdb
 C:\Users\ismai\Desktop\Created_API's while_learning\BookZone\BookZone\obj\Debug\net8.0\BookZone.genruntimeconfig.cache
 C:\Users\ismai\Desktop\Created_API's while_learning\BookZone\BookZone\obj\Debug\net8.0\ref\BookZone.dll
+C:\Users\ismai\Desktop\Created_API's while_learning\BookZone\BookZone\bin\Debug\net8.0\BookZone.DataAccess.dll
+C:\Users\ismai\Desktop\Created_API's while_learning\BookZone\BookZone\bin\Debug\net8.0\BookZone.Model.dll
+C:\Users\ismai\Desktop\Created_API's while_learning\BookZone\BookZone\bin\Debug\net8.0\BookZone.Utility.dll
+C:\Users\ismai\Desktop\Created_API's while_learning\BookZone\BookZone\bin\Debug\net8.0\BookZone.DataAccess.pdb
+C:\Users\ismai\Desktop\Created_API's while_learning\BookZone\BookZone\bin\Debug\net8.0\BookZone.Model.pdb
+C:\Users\ismai\Desktop\Created_API's while_learning\BookZone\BookZone\bin\Debug\net8.0\BookZone.Utility.pdb

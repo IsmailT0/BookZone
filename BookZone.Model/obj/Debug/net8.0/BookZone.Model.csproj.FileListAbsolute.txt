@@ -1,0 +1,11 @@
+C:\Users\ismai\Desktop\Created_API's while_learning\BookZone\BookZone.Model\bin\Debug\net8.0\BookZone.Model.deps.json
+C:\Users\ismai\Desktop\Created_API's while_learning\BookZone\BookZone.Model\bin\Debug\net8.0\BookZone.Model.dll
+C:\Users\ismai\Desktop\Created_API's while_learning\BookZone\BookZone.Model\bin\Debug\net8.0\BookZone.Model.pdb
+C:\Users\ismai\Desktop\Created_API's while_learning\BookZone\BookZone.Model\obj\Debug\net8.0\BookZone.Model.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ismai\Desktop\Created_API's while_learning\BookZone\BookZone.Model\obj\Debug\net8.0\BookZone.Model.AssemblyInfoInputs.cache
+C:\Users\ismai\Desktop\Created_API's while_learning\BookZone\BookZone.Model\obj\Debug\net8.0\BookZone.Model.AssemblyInfo.cs
+C:\Users\ismai\Desktop\Created_API's while_learning\BookZone\BookZone.Model\obj\Debug\net8.0\BookZone.Model.csproj.CoreCompileInputs.cache
+C:\Users\ismai\Desktop\Created_API's while_learning\BookZone\BookZone.Model\obj\Debug\net8.0\BookZone.Model.dll
+C:\Users\ismai\Desktop\Created_API's while_learning\BookZone\BookZone.Model\obj\Debug\net8.0\refint\BookZone.Model.dll
+C:\Users\ismai\Desktop\Created_API's while_learning\BookZone\BookZone.Model\obj\Debug\net8.0\BookZone.Model.pdb
+C:\Users\ismai\Desktop\Created_API's while_learning\BookZone\BookZone.Model\obj\Debug\net8.0\ref\BookZone.Model.dll
