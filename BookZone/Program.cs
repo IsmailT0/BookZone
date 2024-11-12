@@ -1,5 +1,7 @@
 
 using BookZone.DataAccess.Data;
+using BookZone.DataAccess.Repository;
+using BookZone.DataAccess.Repository.IRepository;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -9,6 +11,8 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseMySQL(builder.Configuration.GetConnectionString("DefaultConnection")));
 
+builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
+//we use scoped because we want to create a new instance of repository for each request
 
 var app = builder.Build();
 
