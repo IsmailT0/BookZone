@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35312.102
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookZone", "BookZone\BookZone.csproj", "{650337CC-BC53-4472-9DCA-E9E78C93CA2A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookZone", "BookZone\BookZone.csproj", "{650337CC-BC53-4472-9DCA-E9E78C93CA2A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookZone_Razor", "BookZone_Razor\BookZone_Razor.csproj", "{DA865022-97DF-4071-98B9-1995BD2059F3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{650337CC-BC53-4472-9DCA-E9E78C93CA2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{650337CC-BC53-4472-9DCA-E9E78C93CA2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{650337CC-BC53-4472-9DCA-E9E78C93CA2A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA865022-97DF-4071-98B9-1995BD2059F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA865022-97DF-4071-98B9-1995BD2059F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA865022-97DF-4071-98B9-1995BD2059F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA865022-97DF-4071-98B9-1995BD2059F3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
