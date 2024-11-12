@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookZone", "BookZone\BookZo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookZone.DataAccess", "BookZone.DataAccess\BookZone.DataAccess.csproj", "{71DA38B4-6DBE-4E29-997A-50D52C6F7966}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookZone.Model", "BookZone.Model\BookZone.Model.csproj", "{216DE4AD-C6C4-4127-8A6B-3B7BA95AA7A8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookZone.Models", "BookZone.Model\BookZone.Models.csproj", "{216DE4AD-C6C4-4127-8A6B-3B7BA95AA7A8}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookZone.Utility", "BookZone.Utility\BookZone.Utility.csproj", "{03BDE3C4-1198-477C-912F-CE0598D6E7AE}"
 EndProject

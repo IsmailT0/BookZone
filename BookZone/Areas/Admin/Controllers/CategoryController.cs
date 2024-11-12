@@ -1,7 +1,7 @@
 ﻿using BookZone.DataAccess.Data;
 using BookZone.DataAccess.Repository;
 using BookZone.DataAccess.Repository.IRepository;
-using BookZone.Model;
+using BookZone.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BookZone.Areas.Admin.Controllers

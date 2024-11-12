@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.10" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.10">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -17,7 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\BookZone.Model\BookZone.Model.csproj" />
+    <ProjectReference Include="..\BookZone.Model\BookZone.Models.csproj" />
     <ProjectReference Include="..\BookZone.Model\BookZone.Model.csproj" />
     <ProjectReference Include="..\BookZone.Utility\BookZone.Utility.csproj" />
   </ItemGroup>

@@ -2491,7 +2491,9 @@
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
           "BookZone.Model": "1.0.0",
+          "BookZone.Models": "1.0.0",
           "BookZone.Utility": "1.0.0",
+          "Microsoft.EntityFrameworkCore": "8.0.10",
           "MySql.Data": "9.1.0",
           "MySql.EntityFrameworkCore": "8.0.8",
           "NuGet.Frameworks": "6.11.1"
@@ -2511,6 +2513,16 @@
         },
         "runtime": {
           "bin/placeholder/BookZone.Model.dll": {}
+        }
+      },
+      "BookZone.Models/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/BookZone.Models.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BookZone.Models.dll": {}
         }
       },
       "BookZone.Utility/1.0.0": {
@@ -7250,6 +7262,11 @@
       "type": "project",
       "path": "../BookZone.Model/BookZone.Model.csproj",
       "msbuildProject": "../BookZone.Model/BookZone.Model.csproj"
+    },
+    "BookZone.Models/1.0.0": {
+      "type": "project",
+      "path": "../BookZone.Model/BookZone.Models.csproj",
+      "msbuildProject": "../BookZone.Model/BookZone.Models.csproj"
     },
     "BookZone.Utility/1.0.0": {
       "type": "project",

@@ -1,6 +1,6 @@
 ﻿using BookZone.DataAccess.Data;
 using BookZone.DataAccess.Repository.IRepository;
-using BookZone.Model;
+using BookZone.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;

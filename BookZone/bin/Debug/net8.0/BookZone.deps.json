@@ -1736,7 +1736,9 @@
       "BookZone.DataAccess/1.0.0": {
         "dependencies": {
           "BookZone.Model": "1.0.0",
+          "BookZone.Models": "1.0.0",
           "BookZone.Utility": "1.0.0",
+          "Microsoft.EntityFrameworkCore": "8.0.10",
           "MySql.Data": "9.1.0",
           "MySql.EntityFrameworkCore": "8.0.8",
           "NuGet.Frameworks": "6.11.1"
@@ -1748,9 +1750,9 @@
           }
         }
       },
-      "BookZone.Model/1.0.0": {
+      "BookZone.Models/1.0.0": {
         "runtime": {
-          "BookZone.Model.dll": {
+          "BookZone.Models.dll": {
             "assemblyVersion": "1.0.0",
             "fileVersion": "1.0.0.0"
           }
@@ -2813,7 +2815,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "BookZone.Model/1.0.0": {
+    "BookZone.Models/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
