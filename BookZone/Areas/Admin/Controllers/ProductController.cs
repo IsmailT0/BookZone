@@ -1,6 +1,8 @@
 ﻿using BookZone.DataAccess.Repository.IRepository;
 using BookZone.Models;
+using BookZone.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace BookZone.Areas.Admin.Controllers
 {
@@ -22,19 +24,50 @@ namespace BookZone.Areas.Admin.Controllers
 
         public IActionResult Create()
         {
-            return View();
+            
+            // Using ViewBag to pass the category list to the view
+            // ViewBag is a dynamic object that provides a convenient way to pass data from the controller to the view
+            // It is useful for passing small amounts of data that do not require a strongly-typed view model
+            //ViewBag.CategoryList = categoryList;
+
+
+            ProductVM productVM = new ProductVM()
+            {
+                Product = new Product(),
+                CategoryList = _unitOfWork.Category
+                .GetAll().Select(u => new SelectListItem
+                {
+                    Text = u.Name,
+                    Value = u.Id.ToString()
+                })
+                // Creating a list of SelectListItem to populate a dropdown list in the view
+                // This allows users to select a category from a dropdown when creating or editing a product
+            };
+
+            return View(productVM);
         }
         [HttpPost]
-        public IActionResult Create(Product obj)
+        public IActionResult Create(ProductVM productVM)
         {
             if (ModelState.IsValid)
             {
-                _unitOfWork.Product.Add(obj);
+                _unitOfWork.Product.Add(productVM.Product);
                 _unitOfWork.Save();
                 TempData["success"] = "Product created successfully";
                 return RedirectToAction("Index");
             }
-            return View();
+            else
+            {
+                productVM.CategoryList = _unitOfWork.Category
+                .GetAll().Select(u => new SelectListItem
+                {
+                    Text = u.Name,
+                    Value = u.Id.ToString()
+                });
+
+
+                return View(productVM);
+            }
 
         }
 

@@ -1257,7 +1257,10 @@
         },
         "runtime": {
           "bin/placeholder/BookZone.Models.dll": {}
-        }
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
       },
       "BookZone.Utility/1.0.0": {
         "type": "project",
