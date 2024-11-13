@@ -22,7 +22,7 @@ namespace BookZone.Areas.Admin.Controllers
         }
 
 
-        public IActionResult Create()
+        public IActionResult Upsert(int? id) //UpdateInsert
         {
             
             // Using ViewBag to pass the category list to the view
@@ -43,11 +43,21 @@ namespace BookZone.Areas.Admin.Controllers
                 // Creating a list of SelectListItem to populate a dropdown list in the view
                 // This allows users to select a category from a dropdown when creating or editing a product
             };
+            if(id== null || id== 0)
+            {
+                // This is for create
+                return View(productVM);
+            }
+            else
+            {
+                //update
+                productVM.Product = _unitOfWork.Product.Get(u => u.Id == id);
+                return View(productVM);
+            }
 
-            return View(productVM);
         }
         [HttpPost]
-        public IActionResult Create(ProductVM productVM)
+        public IActionResult Upsert(ProductVM productVM,IFormFile file)
         {
             if (ModelState.IsValid)
             {
@@ -71,35 +81,7 @@ namespace BookZone.Areas.Admin.Controllers
 
         }
 
-        public IActionResult Edit(int? id)
-        {
-            if (id == null || id == 0)
-            {
-                return NotFound();
-            }
-            Product? productFromDb = _unitOfWork.Product.Get(u => u.Id == id);
-            //Product? productFromDb1 = _db.Categories.FirstOrDefault(u=>u.Id==id);
-            //Product? productFromDb2 = _db.Categories.Where(u=>u.Id==id).FirstOrDefault();
-
-            if (productFromDb == null)
-            {
-                return NotFound();
-            }
-            return View(productFromDb);
-        }
-        [HttpPost]
-        public IActionResult Edit(Product obj)
-        {
-            if (ModelState.IsValid)
-            {
-                _unitOfWork.Product.Update(obj);
-                _unitOfWork.Save();
-                TempData["success"] = "Product updated succesfully";
-                return RedirectToAction("Index");
-            }
-            return View();
-
-        }
+       
 
         public IActionResult Delete(int? id)
         {
