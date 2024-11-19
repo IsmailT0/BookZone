@@ -14,9 +14,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ismai\\Desktop\\Created_API's while_learning\\BookZone\\BookZone.Model\\BookZone.Model.csproj",
-      "projectName": "BookZone.Model",
-      "projectPath": "C:\\Users\\ismai\\Desktop\\Created_API's while_learning\\BookZone\\BookZone.Model\\BookZone.Model.csproj",
+      "projectUniqueName": "C:\\Users\\ismai\\Desktop\\Created_API's while_learning\\BookZone\\BookZone.Model\\BookZone.Models.csproj",
+      "projectName": "BookZone.Models",
+      "projectPath": "C:\\Users\\ismai\\Desktop\\Created_API's while_learning\\BookZone\\BookZone.Model\\BookZone.Models.csproj",
       "packagesPath": "C:\\Users\\ismai\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\ismai\\Desktop\\Created_API's while_learning\\BookZone\\BookZone.Model\\obj\\",
       "projectStyle": "PackageReference",
@@ -68,6 +68,9 @@
         "assetTargetFallback": true,
         "warn": true,
         "frameworkReferences": {
+          "Microsoft.AspNetCore.App": {
+            "privateAssets": "none"
+          },
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }

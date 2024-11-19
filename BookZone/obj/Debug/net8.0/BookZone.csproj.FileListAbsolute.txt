@@ -248,3 +248,8 @@ C:\Users\ismai\Desktop\Created_API's while_learning\BookZone\BookZone\bin\Debug\
 C:\Users\ismai\Desktop\Created_API's while_learning\BookZone\BookZone\bin\Debug\net8.0\BookZone.Models.dll
 C:\Users\ismai\Desktop\Created_API's while_learning\BookZone\BookZone\bin\Debug\net8.0\BookZone.Models.pdb
 C:\Users\ismai\Desktop\Created_API's while_learning\BookZone\BookZone\obj\Debug\net8.0\BookZone.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\ismai\Desktop\Created_API's while_learning\BookZone\BookZone\bin\Debug\net8.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\ismai\Desktop\Created_API's while_learning\BookZone\BookZone\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\ismai\Desktop\Created_API's while_learning\BookZone\BookZone\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\ismai\Desktop\Created_API's while_learning\BookZone\BookZone\bin\Debug\net8.0\Microsoft.Extensions.Identity.Core.dll
+C:\Users\ismai\Desktop\Created_API's while_learning\BookZone\BookZone\bin\Debug\net8.0\Microsoft.Extensions.Identity.Stores.dll
