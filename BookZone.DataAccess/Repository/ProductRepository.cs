@@ -31,13 +31,12 @@ namespace BookZone.DataAccess.Repository
                 objFromDb.ListPrice = obj.ListPrice;
                 objFromDb.Price100 = obj.Price100;
                 objFromDb.Description = obj.Description;
+                objFromDb.CategoryId = obj.CategoryId;
                 objFromDb.Author = obj.Author;
-                //objFromDb.CategoryId = obj.CategoryId;
-                //objFromDb.Author = obj.Author;
-                //if (obj.ImageUrl != null)
-                //{
-                //    objFromDb.ImageUrl = obj.ImageUrl;
-                //}
+                if (obj.ImageUrl != null)
+                {
+                    objFromDb.ImageUrl = obj.ImageUrl;
+                }
             }
         }
     }
