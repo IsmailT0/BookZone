@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "iYIXw6QFdp6iqQXoimYOh2gNeEr3obCvzUMP7dW9z8k=",
+  "Hash": "8FdwSQ+Rc/zp19BJxj+8ZSY1YbPO7DyRUjuZC2NevKQ=",
   "Source": "BookZone",
   "BasePath": "_content/BookZone",
   "Mode": "Default",
@@ -91,6 +91,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\ismai\\Desktop\\Created_API's while_learning\\BookZone\\BookZone\\wwwroot\\images\\product\\de147e49-a8ee-46b5-8200-ae7db6fc72c1.png",
+      "SourceId": "BookZone",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ismai\\Desktop\\Created_API's while_learning\\BookZone\\BookZone\\wwwroot\\",
+      "BasePath": "_content/BookZone",
+      "RelativePath": "images/product/de147e49-a8ee-46b5-8200-ae7db6fc72c1.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\product\\de147e49-a8ee-46b5-8200-ae7db6fc72c1.png"
     },
     {
       "Identity": "C:\\Users\\ismai\\Desktop\\Created_API's while_learning\\BookZone\\BookZone\\wwwroot\\js\\site.js",
