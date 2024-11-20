@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "3WCmstpwM5w=",
+  "dgSpecHash": "IOwma9sYqRg=",
   "success": true,
   "projectFilePath": "C:\\Users\\ismai\\Desktop\\Created_API's while_learning\\BookZone\\BookZone.Utility\\BookZone.Utility.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\ismai\\.nuget\\packages\\bcrypt.net-next\\4.0.0\\bcrypt.net-next.4.0.0.nupkg.sha512"
+  ],
   "logs": []
 }
