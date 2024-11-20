@@ -1,10 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using BookZone.Models;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 namespace BookZone.DataAccess.Data
 {
-    public class ApplicationDbContext : IdentityDbContext
+    public class ApplicationDbContext : DbContext
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
         {
