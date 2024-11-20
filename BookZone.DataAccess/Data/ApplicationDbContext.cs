@@ -11,11 +11,12 @@ namespace BookZone.DataAccess.Data
 
         public DbSet<Category> Categories { get; set; }
         public DbSet<Product> Products { get; set; }
+        public DbSet<User> Users { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
 
-            base.OnModelCreating(modelBuilder);
+            //base.OnModelCreating(modelBuilder); // This line is not needed
 
 
             modelBuilder.Entity<Category>().HasData(
@@ -114,6 +115,29 @@ namespace BookZone.DataAccess.Data
 
                 }
                 );
+
+            modelBuilder.Entity<User>().HasData(
+                new User
+                {
+                    Id = 1,
+                    Email = "admin@admin.com",
+                    PasswordHash = "AQAAAA",
+                    ResetToken = "",
+                    ResetTokenExpiry = null,
+                    UserType = "admin"
+                },
+                new User
+                {
+                    Id = 2,
+                    Email = "customer@customer.com",
+                    PasswordHash = "AQAAAA",
+                    ResetToken = "",
+                    ResetTokenExpiry = null,
+                    UserType = "customer"
+                }
+
+            );
+             
         }
 
 

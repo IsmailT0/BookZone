@@ -248,3 +248,12 @@ C:\Users\ismai\Desktop\Created_API's while_learning\BookZone\BookZone\bin\Debug\
 C:\Users\ismai\Desktop\Created_API's while_learning\BookZone\BookZone\bin\Debug\net8.0\BookZone.Models.dll
 C:\Users\ismai\Desktop\Created_API's while_learning\BookZone\BookZone\bin\Debug\net8.0\BookZone.Models.pdb
 C:\Users\ismai\Desktop\Created_API's while_learning\BookZone\BookZone\obj\Debug\net8.0\BookZone.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\ismai\Desktop\Created_API's while_learning\BookZone\BookZone\bin\Debug\net8.0\BCrypt.Net-Next.dll
+C:\Users\ismai\Desktop\Created_API's while_learning\BookZone\BookZone\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\ismai\Desktop\Created_API's while_learning\BookZone\BookZone\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\ismai\Desktop\Created_API's while_learning\BookZone\BookZone\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\ismai\Desktop\Created_API's while_learning\BookZone\BookZone\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\ismai\Desktop\Created_API's while_learning\BookZone\BookZone\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\ismai\Desktop\Created_API's while_learning\BookZone\BookZone\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\ismai\Desktop\Created_API's while_learning\BookZone\BookZone\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\ismai\Desktop\Created_API's while_learning\BookZone\BookZone\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll

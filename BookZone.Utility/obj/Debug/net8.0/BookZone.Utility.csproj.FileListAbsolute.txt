@@ -9,3 +9,4 @@ C:\Users\ismai\Desktop\Created_API's while_learning\BookZone\BookZone.Utility\ob
 C:\Users\ismai\Desktop\Created_API's while_learning\BookZone\BookZone.Utility\obj\Debug\net8.0\refint\BookZone.Utility.dll
 C:\Users\ismai\Desktop\Created_API's while_learning\BookZone\BookZone.Utility\obj\Debug\net8.0\BookZone.Utility.pdb
 C:\Users\ismai\Desktop\Created_API's while_learning\BookZone\BookZone.Utility\obj\Debug\net8.0\ref\BookZone.Utility.dll
+C:\Users\ismai\Desktop\Created_API's while_learning\BookZone\BookZone.Utility\obj\Debug\net8.0\BookZone.Utility.csproj.AssemblyReference.cache
