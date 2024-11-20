@@ -21,5 +21,16 @@ namespace BookZone.DataAccess.Repository
         {
             _db.Users.Update(obj);
         }
+
+        public User GetByEmail(string email)
+        {
+            return _db.Users.FirstOrDefault(u => u.Email.ToLower().Trim() == email.ToLower().Trim());
+        }
+
+        public User GetByResetToken(string resetToken)
+        {
+            return _db.Users.FirstOrDefault(u => u.ResetToken == resetToken);
+        }
+
     }
 }

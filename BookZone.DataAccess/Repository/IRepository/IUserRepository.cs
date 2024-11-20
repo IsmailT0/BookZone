@@ -10,5 +10,8 @@ namespace BookZone.DataAccess.Repository.IRepository
     public interface IUserRepository : IRepository<User>
     {
         void Update(User obj);
+
+        User GetByEmail(string email);
+        User GetByResetToken(string resetToken);
     }
 }
