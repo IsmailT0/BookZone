@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BookZone.Utility")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4884329ade4fe4962fd2bb6e3852e5d6d96c36f4")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+53b0702faaf6187e56789ab7f299d02d178bf1ba")]
 [assembly: System.Reflection.AssemblyProductAttribute("BookZone.Utility")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BookZone.Utility")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

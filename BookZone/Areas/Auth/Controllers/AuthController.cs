@@ -3,11 +3,11 @@ using BookZone.Models;
 using BookZone.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
-namespace BookZone.Controllers
+namespace BookZone.Areas.Auth.Controllers
 {
+    [Area("Auth")]
     public class AuthController : Controller
     {
-
         private readonly IUnitOfWork _unitOfWork;
         public AuthController(IUnitOfWork unitOfWork)
         {
@@ -16,9 +16,8 @@ namespace BookZone.Controllers
 
         public IActionResult Index()
         {
-            return View();  
+            return View();
         }
-
 
         [HttpPost]
         public IActionResult Register(RegisterVM model)
@@ -50,7 +49,6 @@ namespace BookZone.Controllers
 
             return RedirectToAction("Login");
         }
-
 
         [HttpPost]
         public IActionResult Login(LoginVM model)
