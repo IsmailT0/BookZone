@@ -10,6 +10,7 @@ namespace BookZone.DataAccess.Repository.IRepository
     {
         ICategoryRepository Category { get; }
         IProductRepository Product { get; }
+        IUserRepository Users { get; }
 
         void Save();
     }

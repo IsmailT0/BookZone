@@ -9,4 +9,3 @@ C:\Users\ismai\Desktop\Created_API's while_learning\BookZone\BookZone.Model\obj\
 C:\Users\ismai\Desktop\Created_API's while_learning\BookZone\BookZone.Model\obj\Debug\net8.0\refint\BookZone.Models.dll
 C:\Users\ismai\Desktop\Created_API's while_learning\BookZone\BookZone.Model\obj\Debug\net8.0\BookZone.Models.pdb
 C:\Users\ismai\Desktop\Created_API's while_learning\BookZone\BookZone.Model\obj\Debug\net8.0\ref\BookZone.Models.dll
-C:\Users\ismai\Desktop\Created_API's while_learning\BookZone\BookZone.Model\obj\Debug\net8.0\BookZone.Models.csproj.AssemblyReference.cache
