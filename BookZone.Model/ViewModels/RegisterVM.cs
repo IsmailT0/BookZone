@@ -9,7 +9,6 @@ namespace BookZone.Models.ViewModels
 {
     public class RegisterVM
     {
-        
         [Required]
         [EmailAddress]
         public string Email { get; set; }
@@ -21,5 +20,8 @@ namespace BookZone.Models.ViewModels
         [Required]
         [Compare("Password", ErrorMessage = "Passwords do not match.")]
         public string ConfirmPassword { get; set; }
+
+        [Required]
+        public string UserType { get; set; } 
     }
 }

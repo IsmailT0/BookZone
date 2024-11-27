@@ -1,0 +1,35 @@
+﻿@model BookZone.Models.ViewModels.RegisterVM
+@{
+    ViewData["Title"] = "Register";
+}
+
+<div class="container mt-5">
+    <h2>Register</h2>
+    <form asp-action="Register" method="post" class="mt-3">
+        @Html.AntiForgeryToken()
+        <div class="mb-3">
+            <label for="Email" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="Email" name="Email" required />
+            @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+        </div>
+        <div class="mb-3">
+            <label for="Password" class="form-label">Password</label>
+            <input type="password" class="form-control" id="Password" name="Password" required />
+            @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+        </div>
+        <div class="mb-3">
+            <label for="ConfirmPassword" class="form-label">Confirm Password</label>
+            <input type="password" class="form-control" id="ConfirmPassword" name="ConfirmPassword" required />
+            @Html.ValidationMessageFor(m => m.ConfirmPassword, "", new { @class = "text-danger" })
+        </div>
+        <div class="mb-3">
+            <label for="UserType" class="form-label">User Type</label>
+            <select class="form-control" id="UserType" name="UserType" required>
+                <option value="@BookZone.Utility.SD.CustomerEndUser">Customer</option>
+                <option value="@BookZone.Utility.SD.AdminEndUser">Admin</option>
+            </select>
+            @Html.ValidationMessageFor(m => m.UserType, "", new { @class = "text-danger" })
+        </div>
+        <button type="submit" class="btn btn-success">Sign Up</button>
+    </form>
+</div>

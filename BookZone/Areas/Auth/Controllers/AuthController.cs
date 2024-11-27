@@ -1,7 +1,9 @@
 ﻿using BookZone.DataAccess.Repository.IRepository;
 using BookZone.Models;
 using BookZone.Models.ViewModels;
+using BookZone.Utility;
 using Microsoft.AspNetCore.Mvc;
+using System;
 
 namespace BookZone.Areas.Auth.Controllers
 {
@@ -15,6 +17,11 @@ namespace BookZone.Areas.Auth.Controllers
         }
 
         public IActionResult Index()
+        {
+            return View();
+        }
+
+        public IActionResult Register()
         {
             return View();
         }
@@ -37,17 +44,21 @@ namespace BookZone.Areas.Auth.Controllers
 
             // Create a new user
             var hashedPassword = BCrypt.Net.BCrypt.HashPassword(model.Password);
+            var resetToken = Guid.NewGuid().ToString();
             var user = new User
             {
                 Email = model.Email,
                 PasswordHash = hashedPassword,
-                UserType = "Customer" // Or "Admin"
+                UserType = model.UserType, // Use the selected user type
+                ResetToken = resetToken,
+                ResetTokenExpiry = DateTime.UtcNow.AddHours(24) // Set token expiry to 24 hours from now
             };
 
             _unitOfWork.Users.Add(user);
             _unitOfWork.Save();
 
-            return RedirectToAction("Login");
+            return RedirectToAction("Index", "Home", new { area = "Customer" });
+
         }
 
         [HttpPost]
@@ -69,13 +80,9 @@ namespace BookZone.Areas.Auth.Controllers
             HttpContext.Session.SetString("UserType", user.UserType);
             HttpContext.Session.SetInt32("UserId", user.Id);
 
-            // Redirect based on UserType
-            if (user.UserType == "Admin")
-            {
-                return RedirectToAction("Index", "Home", new { area = "Admin" });
-            }
 
             return RedirectToAction("Index", "Home", new { area = "Customer" });
+
         }
     }
 }

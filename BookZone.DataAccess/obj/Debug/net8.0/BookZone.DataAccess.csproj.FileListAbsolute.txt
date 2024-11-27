@@ -17,3 +17,4 @@ C:\Users\ismai\Desktop\Created_API's while_learning\BookZone\BookZone.DataAccess
 C:\Users\ismai\Desktop\Created_API's while_learning\BookZone\BookZone.DataAccess\obj\Debug\net8.0\ref\BookZone.DataAccess.dll
 C:\Users\ismai\Desktop\Created_API's while_learning\BookZone\BookZone.DataAccess\bin\Debug\net8.0\BookZone.Models.dll
 C:\Users\ismai\Desktop\Created_API's while_learning\BookZone\BookZone.DataAccess\bin\Debug\net8.0\BookZone.Models.pdb
+C:\Users\ismai\Desktop\Created_API's while_learning\BookZone\BookZone.DataAccess\obj\Debug\net8.0\BookZone.DataAccess.sourcelink.json

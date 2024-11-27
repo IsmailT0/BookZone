@@ -11,3 +11,5 @@ build_property.RootNamespace = BookZone.Models
 build_property.ProjectDir = C:\Users\ismai\Desktop\Created_API's while_learning\BookZone\BookZone.Model\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.EffectiveAnalysisLevelStyle = 8.0
+build_property.EnableCodeStyleSeverity = 
