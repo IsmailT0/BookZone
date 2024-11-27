@@ -11,7 +11,7 @@ namespace BookZone.DataAccess.Repository.IRepository
         ICategoryRepository Category { get; }
         IProductRepository Product { get; }
         IUserRepository Users { get; }
-
+        IShoppingCartRepository ShoppingCart { get; }
         void Save();
     }
 }
