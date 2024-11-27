@@ -1,7 +1,6 @@
 ﻿using BookZone.DataAccess.Repository.IRepository;
 using BookZone.Models;
 using BookZone.Models.ViewModels;
-using BookZone.Utility;
 using Microsoft.AspNetCore.Mvc;
 using System;
 
@@ -58,7 +57,6 @@ namespace BookZone.Areas.Auth.Controllers
             _unitOfWork.Save();
 
             return RedirectToAction("Index", "Home", new { area = "Customer" });
-
         }
 
         [HttpPost]
@@ -79,10 +77,15 @@ namespace BookZone.Areas.Auth.Controllers
             // Set session or token
             HttpContext.Session.SetString("UserType", user.UserType);
             HttpContext.Session.SetInt32("UserId", user.Id);
-
+            HttpContext.Session.SetString("UserEmail", user.Email);
 
             return RedirectToAction("Index", "Home", new { area = "Customer" });
+        }
 
+        public IActionResult Logout()
+        {
+            HttpContext.Session.Clear();
+            return RedirectToAction("Index", "Home", new { area = "Customer" });
         }
     }
 }
