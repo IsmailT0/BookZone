@@ -1,7 +1,9 @@
+using BookZone.Attributes;
 using BookZone.DataAccess.Repository.IRepository;
 using BookZone.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
+using System.Security.Claims;
 
 namespace BookZone.Areas.Customer.Controllers
 {
@@ -34,6 +36,29 @@ namespace BookZone.Areas.Customer.Controllers
             };
 
             return View(shoppingCart);
+        }
+
+        [HttpPost]
+        [CustomAuthorize] // since I do not use identity , I will use a custom authorize attribute
+        public IActionResult Details(ShoppingCart shoppingCart)
+        {
+            var claimsIdentity = (ClaimsIdentity)User.Identity;
+            var userId = claimsIdentity.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+
+            if (int.TryParse(userId, out int parsedUserId))
+            {
+                shoppingCart.ApplicationUserId = parsedUserId;
+            }
+            else
+            {
+                // Handle the case where userId is not a valid int
+                return BadRequest("Invalid user ID");
+            }
+
+            _unitOfWork.ShoppingCart.Add(shoppingCart);
+            _unitOfWork.Save();
+
+            return RedirectToAction(nameof(Index));
         }
 
         public IActionResult Privacy()

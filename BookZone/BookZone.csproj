@@ -21,6 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\BookZone.Attributes\BookZone.Attributes.csproj" />
     <ProjectReference Include="..\BookZone.DataAccess\BookZone.DataAccess.csproj" />
   </ItemGroup>
 

@@ -262,3 +262,5 @@ C:\Users\ismai\Desktop\Created_API's while_learning\BookZone\BookZone\bin\Debug\
 C:\Users\ismai\Desktop\Created_API's while_learning\BookZone\BookZone\obj\Debug\net8.0\staticwebassets.build.endpoints.json
 C:\Users\ismai\Desktop\Created_API's while_learning\BookZone\BookZone\obj\Debug\net8.0\staticwebassets\msbuild.BookZone.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
 C:\Users\ismai\Desktop\Created_API's while_learning\BookZone\BookZone\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+C:\Users\ismai\Desktop\Created_API's while_learning\BookZone\BookZone\bin\Debug\net8.0\BookZone.Attributes.dll
+C:\Users\ismai\Desktop\Created_API's while_learning\BookZone\BookZone\bin\Debug\net8.0\BookZone.Attributes.pdb

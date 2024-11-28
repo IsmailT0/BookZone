@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.AspNetCore.Routing;
+using System.Security.Claims;
 
 namespace BookZone.Attributes
 {
@@ -15,9 +16,19 @@ namespace BookZone.Attributes
                 context.Result = new RedirectToRouteResult(new RouteValueDictionary
                 {
                     { "controller", "Auth" },
-                    { "action", "Login" },
+                    { "action", "Index" },
                     { "area", "Auth" }
                 });
+            }
+            else
+            {
+                // Set the user identity
+                var claims = new List<Claim>
+                {
+                    new Claim(ClaimTypes.NameIdentifier, userId.ToString())
+                };
+                var identity = new ClaimsIdentity(claims, "Custom");
+                context.HttpContext.User = new ClaimsPrincipal(identity);
             }
             base.OnActionExecuting(context);
         }

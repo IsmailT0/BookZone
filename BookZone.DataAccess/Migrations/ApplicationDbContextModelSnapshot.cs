@@ -198,9 +198,8 @@ namespace BookZone.DataAccess.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<string>("ApplicationUserId")
-                        .IsRequired()
-                        .HasColumnType("longtext");
+                    b.Property<int>("ApplicationUserId")
+                        .HasColumnType("int");
 
                     b.Property<int>("Count")
                         .HasColumnType("int");
@@ -208,14 +207,11 @@ namespace BookZone.DataAccess.Migrations
                     b.Property<int>("ProductId")
                         .HasColumnType("int");
 
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
 
-                    b.HasIndex("ProductId");
+                    b.HasIndex("ApplicationUserId");
 
-                    b.HasIndex("UserId");
+                    b.HasIndex("ProductId");
 
                     b.ToTable("ShoppingCarts");
                 });
@@ -281,15 +277,15 @@ namespace BookZone.DataAccess.Migrations
 
             modelBuilder.Entity("BookZone.Models.ShoppingCart", b =>
                 {
-                    b.HasOne("BookZone.Models.Product", "Product")
+                    b.HasOne("BookZone.Models.User", "User")
                         .WithMany()
-                        .HasForeignKey("ProductId")
+                        .HasForeignKey("ApplicationUserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("BookZone.Models.User", "User")
+                    b.HasOne("BookZone.Models.Product", "Product")
                         .WithMany()
-                        .HasForeignKey("UserId")
+                        .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
