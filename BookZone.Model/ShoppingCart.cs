@@ -19,5 +19,8 @@ namespace BookZone.Models
         [ForeignKey("ApplicationUserId")]
         [ValidateNever]
         public User User { get; set; }
+
+        [NotMapped]
+        public double Price { get; set; }
     }
 }

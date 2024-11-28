@@ -36,9 +36,30 @@ namespace BookZone.Areas.Customer.Controllers
                 // Handle the case where userId is not a valid int
                 return BadRequest("Invalid user ID");
             }
-
+            foreach (var cart in shoppingCartVM.ShoppingCartList)
+            {
+               cart.Price = calculateOrderTotal(cart);
+                shoppingCartVM.OrderTotal += (cart.Price * cart.Count);
+            }
 
             return View(shoppingCartVM);
+        }
+
+
+        private double calculateOrderTotal(ShoppingCart shoppingCart)
+        {
+            if (shoppingCart.Count <= 50)
+            {
+                return shoppingCart.Product.Price;
+            }
+            else if (shoppingCart.Count > 50 && shoppingCart.Count <= 100)
+            {
+                return shoppingCart.Product.Price50;
+            }
+            else
+            {
+                return shoppingCart.Product.Price100;
+            }
         }
     }
 }
