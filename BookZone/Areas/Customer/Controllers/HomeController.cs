@@ -55,7 +55,22 @@ namespace BookZone.Areas.Customer.Controllers
                 return BadRequest("Invalid user ID");
             }
 
-            _unitOfWork.ShoppingCart.Add(shoppingCart);
+            ShoppingCart cartFromDb = _unitOfWork.ShoppingCart
+                .Get(u => u.ApplicationUserId == shoppingCart.ApplicationUserId &&
+                    u.ProductId == shoppingCart.ProductId);
+
+            if (cartFromDb == null)
+            {
+                //shopping cart is not exists for that product, create a new one
+                _unitOfWork.ShoppingCart.Add(shoppingCart);
+            }
+            else
+            {
+                cartFromDb.Count += shoppingCart.Count;
+                _unitOfWork.ShoppingCart.Update(cartFromDb);
+            }
+
+            
             _unitOfWork.Save();
 
             return RedirectToAction(nameof(Index));
