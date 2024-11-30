@@ -23,12 +23,13 @@ namespace BookZone.Areas.Customer.Controllers
             var claimsIdentity = (ClaimsIdentity)User.Identity;
             var userId = claimsIdentity.FindFirst(ClaimTypes.NameIdentifier)?.Value;
             ShoppingCartVM shoppingCartVM;
+
             if (int.TryParse(userId, out int parsedUserId))
             {
                 shoppingCartVM = new ShoppingCartVM
                 {
                     ShoppingCartList = _unitOfWork.ShoppingCart.GetAll(u => u.ApplicationUserId == parsedUserId, includeProperties: "Product"),
-                    OrderTotal = 0
+                    OrderHeader = new OrderHeader()
                 };
             }
             else
@@ -36,10 +37,11 @@ namespace BookZone.Areas.Customer.Controllers
                 // Handle the case where userId is not a valid int
                 return BadRequest("Invalid user ID");
             }
+
             foreach (var cart in shoppingCartVM.ShoppingCartList)
             {
                cart.Price = calculateOrderTotal(cart);
-                shoppingCartVM.OrderTotal += (cart.Price * cart.Count);
+                shoppingCartVM.OrderHeader.OrderTotal += (cart.Price * cart.Count);
             }
 
             return View(shoppingCartVM);
@@ -47,7 +49,37 @@ namespace BookZone.Areas.Customer.Controllers
 
         public IActionResult Summary()
         {
-            return View();
+            var claimsIdentity = (ClaimsIdentity)User.Identity;
+            var userId = claimsIdentity.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            ShoppingCartVM shoppingCartVM;
+
+
+            if (int.TryParse(userId, out int parsedUserId))
+            {
+                shoppingCartVM = new ShoppingCartVM
+                {
+                    ShoppingCartList = _unitOfWork.ShoppingCart.GetAll(u => u.ApplicationUserId == parsedUserId, includeProperties: "Product"),
+                    OrderHeader = new OrderHeader()
+                };
+            }
+            else
+            {
+                // Handle the case where userId is not a valid int
+                return BadRequest("Invalid user ID");
+            }
+
+            shoppingCartVM.OrderHeader.User = _unitOfWork.Users.Get(u => u.Id == parsedUserId);
+
+
+
+
+            foreach (var cart in shoppingCartVM.ShoppingCartList)
+            {
+                cart.Price = calculateOrderTotal(cart);
+                shoppingCartVM.OrderHeader.OrderTotal += (cart.Price * cart.Count);
+            }
+
+            return View(shoppingCartVM);
         }
 
         public IActionResult Plus(int cartId)

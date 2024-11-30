@@ -15,6 +15,7 @@ namespace BookZone.Models
         public int UserId { get; set; }
         [ForeignKey("UserId")]
         [ValidateNever]
+        public User User { get; set; }
         public DateTime OrderDate { get; set; }
         public DateTime ShippingDate { get; set; }
         public double OrderTotal { get; set; }
