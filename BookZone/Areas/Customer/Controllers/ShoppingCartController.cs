@@ -48,68 +48,18 @@ namespace BookZone.Areas.Customer.Controllers
             return View(_shoppingCartVM);
         }
 
+
+
+
         public IActionResult Summary()
         {
             var claimsIdentity = (ClaimsIdentity)User.Identity;
             var userId = claimsIdentity.FindFirst(ClaimTypes.NameIdentifier)?.Value;
 
-            if (int.TryParse(userId, out int parsedUserId))
-            {
-                _shoppingCartVM = new() {
-                    ShoppingCartList = _unitOfWork.ShoppingCart.GetAll(u => u.ApplicationUserId == parsedUserId, includeProperties: "Product"),
-                    OrderHeader= new OrderHeader() 
-                };
-
-            }else
-            {
-                // Handle the case where userId is not a valid int
-                return BadRequest("Invalid user ID");
-            }
-
-            _shoppingCartVM.OrderHeader.UserId = parsedUserId;
-            _shoppingCartVM.OrderHeader.User = _unitOfWork.Users.Get(u => u.Id == parsedUserId);
-            _shoppingCartVM.OrderHeader.OrderDate = System.DateTime.Now;
-
-            foreach (var cart in _shoppingCartVM.ShoppingCartList)
-            {
-                cart.Price = calculateOrderTotal(cart);
-                _shoppingCartVM.OrderHeader.OrderTotal += (cart.Price * cart.Count);
-            }
-
-            _shoppingCartVM.OrderHeader.PaymentStatus = SD.PaymentStatusPending;
-            _shoppingCartVM.OrderHeader.OrderStatus = SD.StatusPending;
-
-            _unitOfWork.OrderHeader.Add(_shoppingCartVM.OrderHeader);
-            _unitOfWork.Save();
-
-            foreach(var cart in _shoppingCartVM.ShoppingCartList)
-            {
-                OrderDetail orderDetail = new OrderDetail
-                {
-                    ProductId = cart.ProductId,
-                    OrderHeaderId = _shoppingCartVM.OrderHeader.Id,
-                    Price = cart.Price,
-                    Count = cart.Count
-                };
-                
-                _unitOfWork.OrderDetail.Add(orderDetail);
-                _unitOfWork.Save();
-            }   
-
-            return View(_shoppingCartVM);
-        }
-
-        [HttpPost]
-        [ActionName("Summary")]
-        public IActionResult SummaryPost()
-        {
-            var claimsIdentity = (ClaimsIdentity)User.Identity;
-            var userId = claimsIdentity.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-
 
             if (int.TryParse(userId, out int parsedUserId))
             {
-                _shoppingCartVM = new ()
+                _shoppingCartVM = new()
                 {
                     ShoppingCartList = _unitOfWork.ShoppingCart.GetAll(u => u.ApplicationUserId == parsedUserId, includeProperties: "Product"),
                     OrderHeader = new OrderHeader()
@@ -134,6 +84,58 @@ namespace BookZone.Areas.Customer.Controllers
 
             return View(_shoppingCartVM);
         }
+
+        [HttpPost]
+        [ActionName("Summary")]
+        public IActionResult SummaryPost()
+        {
+            var claimsIdentity = (ClaimsIdentity)User.Identity;
+            var userId = claimsIdentity.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+
+            if (int.TryParse(userId, out int parsedUserId))
+            {
+                _shoppingCartVM.ShoppingCartList = _unitOfWork.ShoppingCart.GetAll(u => u.ApplicationUserId == parsedUserId, includeProperties: "Product");
+            }
+            else
+            {
+                // Handle the case where userId is not a valid int
+                return BadRequest("Invalid user ID");
+            }
+
+            _shoppingCartVM.OrderHeader.UserId = parsedUserId;
+            _shoppingCartVM.OrderHeader.OrderDate = System.DateTime.Now;
+
+            foreach (var cart in _shoppingCartVM.ShoppingCartList)
+            {
+                cart.Price = calculateOrderTotal(cart);
+                _shoppingCartVM.OrderHeader.OrderTotal += (cart.Price * cart.Count);
+            }
+
+            _shoppingCartVM.OrderHeader.PaymentStatus = SD.PaymentStatusPending;
+            _shoppingCartVM.OrderHeader.OrderStatus = SD.StatusPending;
+
+            _unitOfWork.OrderHeader.Add(_shoppingCartVM.OrderHeader);
+            _unitOfWork.Save();
+
+            foreach (var cart in _shoppingCartVM.ShoppingCartList)
+            {
+                OrderDetail orderDetail = new OrderDetail
+                {
+                    ProductId = cart.ProductId,
+                    OrderHeaderId = _shoppingCartVM.OrderHeader.Id,
+                    Price = cart.Price,
+                    Count = cart.Count
+                };
+
+                _unitOfWork.OrderDetail.Add(orderDetail);
+                _unitOfWork.Save();
+            }
+
+            return View(_shoppingCartVM);
+        }
+
+        
+
 
         public IActionResult Plus(int cartId)
         {
