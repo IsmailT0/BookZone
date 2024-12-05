@@ -2992,6 +2992,9 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
+          "BookZone.Models": "1.0.0",
+          "BookZone.SharedCore": "1.0.0",
+          "BookZone.Utility": "1.0.0",
           "Microsoft.AspNetCore.Mvc.Core": "2.2.5"
         },
         "compile": {
@@ -3006,7 +3009,6 @@
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
           "BCrypt.Net-Next": "4.0.3",
-          "BookZone.Model": "1.0.0",
           "BookZone.Models": "1.0.0",
           "BookZone.Utility": "1.0.0",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "8.0.10",
@@ -3020,16 +3022,6 @@
         },
         "runtime": {
           "bin/placeholder/BookZone.DataAccess.dll": {}
-        }
-      },
-      "BookZone.Model/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v8.0",
-        "compile": {
-          "bin/placeholder/BookZone.Model.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/BookZone.Model.dll": {}
         }
       },
       "BookZone.Models/1.0.0": {
@@ -3048,6 +3040,16 @@
         "frameworkReferences": [
           "Microsoft.AspNetCore.App"
         ]
+      },
+      "BookZone.SharedCore/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/BookZone.SharedCore.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BookZone.SharedCore.dll": {}
+        }
       },
       "BookZone.Utility/1.0.0": {
         "type": "project",
@@ -8259,15 +8261,15 @@
       "path": "../BookZone.DataAccess/BookZone.DataAccess.csproj",
       "msbuildProject": "../BookZone.DataAccess/BookZone.DataAccess.csproj"
     },
-    "BookZone.Model/1.0.0": {
-      "type": "project",
-      "path": "../BookZone.Model/BookZone.Model.csproj",
-      "msbuildProject": "../BookZone.Model/BookZone.Model.csproj"
-    },
     "BookZone.Models/1.0.0": {
       "type": "project",
       "path": "../BookZone.Model/BookZone.Models.csproj",
       "msbuildProject": "../BookZone.Model/BookZone.Models.csproj"
+    },
+    "BookZone.SharedCore/1.0.0": {
+      "type": "project",
+      "path": "../BookZone.SharedCore/BookZone.SharedCore.csproj",
+      "msbuildProject": "../BookZone.SharedCore/BookZone.SharedCore.csproj"
     },
     "BookZone.Utility/1.0.0": {
       "type": "project",
@@ -8338,7 +8340,7 @@
       "restoreAuditProperties": {
         "enableAudit": "true",
         "auditLevel": "low",
-        "auditMode": "all"
+        "auditMode": "direct"
       },
       "SdkAnalysisLevel": "9.0.100"
     },
@@ -8400,20 +8402,8 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1903",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'System.Text.Json' 8.0.4 has a known high severity vulnerability, https://github.com/advisories/GHSA-8g4q-xg66-9fp4",
-      "libraryId": "System.Text.Json",
-      "targetGraphs": [
-        "net8.0"
-      ]
-    }
-  ]
+  }
 }

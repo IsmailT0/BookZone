@@ -11,3 +11,10 @@ C:\Users\ismai\Desktop\Created_API's while_learning\BookZone\BookZone.Attributes
 C:\Users\ismai\Desktop\Created_API's while_learning\BookZone\BookZone.Attributes\obj\Debug\net8.0\refint\BookZone.Attributes.dll
 C:\Users\ismai\Desktop\Created_API's while_learning\BookZone\BookZone.Attributes\obj\Debug\net8.0\BookZone.Attributes.pdb
 C:\Users\ismai\Desktop\Created_API's while_learning\BookZone\BookZone.Attributes\obj\Debug\net8.0\ref\BookZone.Attributes.dll
+C:\Users\ismai\Desktop\Created_API's while_learning\BookZone\BookZone.Attributes\bin\Debug\net8.0\BookZone.Models.dll
+C:\Users\ismai\Desktop\Created_API's while_learning\BookZone\BookZone.Attributes\bin\Debug\net8.0\BookZone.SharedCore.dll
+C:\Users\ismai\Desktop\Created_API's while_learning\BookZone\BookZone.Attributes\bin\Debug\net8.0\BookZone.Utility.dll
+C:\Users\ismai\Desktop\Created_API's while_learning\BookZone\BookZone.Attributes\bin\Debug\net8.0\BookZone.Models.pdb
+C:\Users\ismai\Desktop\Created_API's while_learning\BookZone\BookZone.Attributes\bin\Debug\net8.0\BookZone.Utility.pdb
+C:\Users\ismai\Desktop\Created_API's while_learning\BookZone\BookZone.Attributes\bin\Debug\net8.0\BookZone.SharedCore.pdb
+C:\Users\ismai\Desktop\Created_API's while_learning\BookZone\BookZone.Attributes\obj\Debug\net8.0\BookZone.BD9CD285.Up2Date

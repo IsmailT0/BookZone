@@ -10,4 +10,12 @@
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.2.5" />
   </ItemGroup>
 
+	
+	  <ItemGroup>
+    <ProjectReference Include="..\BookZone.Model\BookZone.Models.csproj" />
+    <ProjectReference Include="..\BookZone.Utility\BookZone.Utility.csproj" />
+    <ProjectReference Include="..\BookZone.SharedCore\BookZone.SharedCore.csproj" />
+  </ItemGroup>
+
+
 </Project>

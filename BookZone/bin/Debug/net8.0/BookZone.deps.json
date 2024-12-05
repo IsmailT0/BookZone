@@ -1971,6 +1971,9 @@
       },
       "BookZone.Attributes/1.0.0": {
         "dependencies": {
+          "BookZone.Models": "1.0.0",
+          "BookZone.SharedCore": "1.0.0",
+          "BookZone.Utility": "1.0.0",
           "Microsoft.AspNetCore.Mvc.Core": "2.2.5"
         },
         "runtime": {
@@ -1983,7 +1986,6 @@
       "BookZone.DataAccess/1.0.0": {
         "dependencies": {
           "BCrypt.Net-Next": "4.0.3",
-          "BookZone.Model": "1.0.0",
           "BookZone.Models": "1.0.0",
           "BookZone.Utility": "1.0.0",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "8.0.10",
@@ -2006,6 +2008,14 @@
         },
         "runtime": {
           "BookZone.Models.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "BookZone.SharedCore/1.0.0": {
+        "runtime": {
+          "BookZone.SharedCore.dll": {
             "assemblyVersion": "1.0.0",
             "fileVersion": "1.0.0.0"
           }
@@ -3280,6 +3290,11 @@
       "sha512": ""
     },
     "BookZone.Models/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "BookZone.SharedCore/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

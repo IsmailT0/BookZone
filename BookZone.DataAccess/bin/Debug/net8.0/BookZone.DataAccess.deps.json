@@ -9,7 +9,6 @@
       "BookZone.DataAccess/1.0.0": {
         "dependencies": {
           "BCrypt.Net-Next": "4.0.3",
-          "BookZone.Model": "1.0.0",
           "BookZone.Models": "1.0.0",
           "BookZone.Utility": "1.0.0",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "8.0.10",

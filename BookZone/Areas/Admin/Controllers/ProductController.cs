@@ -1,6 +1,8 @@
-﻿using BookZone.DataAccess.Repository.IRepository;
+﻿using BookZone.Attributes.Notifiers;
+using BookZone.DataAccess.Repository.IRepository;
 using BookZone.Models;
 using BookZone.Models.ViewModels;
+using BookZone.Utility;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -12,10 +14,12 @@ namespace BookZone.Areas.Admin.Controllers
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IWebHostEnvironment _hostingEnvironment;
+        private readonly ProductNotifier _productNotifier;
         public ProductController(IUnitOfWork unitOfWork, IWebHostEnvironment hostEnvironment)
         {
             _unitOfWork = unitOfWork;
             _hostingEnvironment = hostEnvironment;
+            _productNotifier = new ProductNotifier();
         }
 
         public IActionResult Index()
@@ -51,6 +55,7 @@ namespace BookZone.Areas.Admin.Controllers
 
         }
         [HttpPost]
+        [HttpPost]
         public IActionResult Upsert(ProductVM productVM, IFormFile? file)
         {
             if (ModelState.IsValid)
@@ -63,9 +68,8 @@ namespace BookZone.Areas.Admin.Controllers
 
                     if (!string.IsNullOrEmpty(productVM.Product.ImageUrl))
                     {
-                        //delete the old image
-                        var oldImagePath =
-                            Path.Combine(wwwRootPath, productVM.Product.ImageUrl.TrimStart('\\'));
+                        // Delete the old image
+                        var oldImagePath = Path.Combine(wwwRootPath, productVM.Product.ImageUrl.TrimStart('\\'));
 
                         if (System.IO.File.Exists(oldImagePath))
                         {
@@ -81,7 +85,10 @@ namespace BookZone.Areas.Admin.Controllers
                     productVM.Product.ImageUrl = @"\images\product\" + fileName;
                 }
 
-                if (productVM.Product.Id == 0)
+                // Check if it's a new product
+                bool isNewProduct = productVM.Product.Id == 0;
+
+                if (isNewProduct)
                 {
                     _unitOfWork.Product.Add(productVM.Product);
                 }
@@ -91,6 +98,23 @@ namespace BookZone.Areas.Admin.Controllers
                 }
 
                 _unitOfWork.Save();
+
+                if (isNewProduct)
+                {
+                    // Fetch all customers and notify them
+                    var customers = _unitOfWork.Users
+                        .GetAll(u => u.UserType == SD.CustomerEndUser)
+                        .ToList();
+
+                    foreach (var customer in customers)
+                    {
+                        var observer = new EmailNotifier(customer.Email);
+                        _productNotifier.Register(observer);
+                    }
+
+                    _productNotifier.NotifyObservers($"A new product has been added: {productVM.Product.Title}");
+                }
+
                 TempData["success"] = "Product created successfully";
                 return RedirectToAction("Index");
             }
@@ -104,6 +128,7 @@ namespace BookZone.Areas.Admin.Controllers
                 return View(productVM);
             }
         }
+
 
 
         [HttpPost]

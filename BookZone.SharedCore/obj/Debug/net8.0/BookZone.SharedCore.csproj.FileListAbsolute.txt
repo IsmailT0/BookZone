@@ -1,0 +1,12 @@
+C:\Users\ismai\Desktop\Created_API's while_learning\BookZone\BookZone.SharedCore\bin\Debug\net8.0\BookZone.SharedCore.deps.json
+C:\Users\ismai\Desktop\Created_API's while_learning\BookZone\BookZone.SharedCore\bin\Debug\net8.0\BookZone.SharedCore.dll
+C:\Users\ismai\Desktop\Created_API's while_learning\BookZone\BookZone.SharedCore\bin\Debug\net8.0\BookZone.SharedCore.pdb
+C:\Users\ismai\Desktop\Created_API's while_learning\BookZone\BookZone.SharedCore\obj\Debug\net8.0\BookZone.SharedCore.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ismai\Desktop\Created_API's while_learning\BookZone\BookZone.SharedCore\obj\Debug\net8.0\BookZone.SharedCore.AssemblyInfoInputs.cache
+C:\Users\ismai\Desktop\Created_API's while_learning\BookZone\BookZone.SharedCore\obj\Debug\net8.0\BookZone.SharedCore.AssemblyInfo.cs
+C:\Users\ismai\Desktop\Created_API's while_learning\BookZone\BookZone.SharedCore\obj\Debug\net8.0\BookZone.SharedCore.csproj.CoreCompileInputs.cache
+C:\Users\ismai\Desktop\Created_API's while_learning\BookZone\BookZone.SharedCore\obj\Debug\net8.0\BookZone.SharedCore.sourcelink.json
+C:\Users\ismai\Desktop\Created_API's while_learning\BookZone\BookZone.SharedCore\obj\Debug\net8.0\BookZone.SharedCore.dll
+C:\Users\ismai\Desktop\Created_API's while_learning\BookZone\BookZone.SharedCore\obj\Debug\net8.0\refint\BookZone.SharedCore.dll
+C:\Users\ismai\Desktop\Created_API's while_learning\BookZone\BookZone.SharedCore\obj\Debug\net8.0\BookZone.SharedCore.pdb
+C:\Users\ismai\Desktop\Created_API's while_learning\BookZone\BookZone.SharedCore\obj\Debug\net8.0\ref\BookZone.SharedCore.dll

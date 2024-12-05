@@ -21,7 +21,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\BookZone.Model\BookZone.Models.csproj" />
-    <ProjectReference Include="..\BookZone.Model\BookZone.Model.csproj" />
     <ProjectReference Include="..\BookZone.Utility\BookZone.Utility.csproj" />
   </ItemGroup>
 

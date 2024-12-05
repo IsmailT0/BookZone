@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "u6mNKNnOyOs=",
+  "dgSpecHash": "UKBNwFeiwYY=",
   "success": true,
   "projectFilePath": "C:\\Users\\ismai\\Desktop\\Created_API's while_learning\\BookZone\\BookZone.DataAccess\\BookZone.DataAccess.csproj",
   "expectedPackageFiles": [
@@ -79,16 +79,5 @@
     "C:\\Users\\ismai\\.nuget\\packages\\system.windows.extensions\\8.0.0\\system.windows.extensions.8.0.0.nupkg.sha512",
     "C:\\Users\\ismai\\.nuget\\packages\\zstdsharp.port\\0.8.0\\zstdsharp.port.0.8.0.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU1903",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'System.Text.Json' 8.0.4 has a known high severity vulnerability, https://github.com/advisories/GHSA-8g4q-xg66-9fp4",
-      "libraryId": "System.Text.Json",
-      "targetGraphs": [
-        "net8.0"
-      ]
-    }
-  ]
+  "logs": []
 }
