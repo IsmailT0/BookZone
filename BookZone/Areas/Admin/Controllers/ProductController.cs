@@ -54,7 +54,7 @@ namespace BookZone.Areas.Admin.Controllers
             }
 
         }
-        [HttpPost]
+        
         [HttpPost]
         public IActionResult Upsert(ProductVM productVM, IFormFile? file)
         {

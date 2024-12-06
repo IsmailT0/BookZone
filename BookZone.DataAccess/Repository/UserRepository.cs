@@ -27,10 +27,5 @@ namespace BookZone.DataAccess.Repository
             return _db.Users.FirstOrDefault(u => u.Email.ToLower().Trim() == email.ToLower().Trim());
         }
 
-        public User GetByResetToken(string resetToken)
-        {
-            return _db.Users.FirstOrDefault(u => u.ResetToken == resetToken);
-        }
-
     }
 }

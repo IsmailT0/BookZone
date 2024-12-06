@@ -10,20 +10,20 @@ namespace BookZone.Attributes.PaymentStrategy
 {
     public class BankTransferPayment : IPaymentStrategy
     {
-        private readonly ILogger<BankTransferPayment> _logger;
 
-        public BankTransferPayment(ILogger<BankTransferPayment> logger)
+        public BankTransferPayment()
         {
-            _logger = logger;
         }
 
         public Boolean ProcessPayment(decimal amount,decimal receivedAmount)
         {
-            _logger.LogInformation($"Expected payment amount is {amount}");
+            Console.WriteLine($"Expected payment amount is {amount}");
             if (amount == receivedAmount)
             {
+                Console.WriteLine("Payment successful using bank transfer");
                 return true;
             }
+            Console.WriteLine("Payment failed");
             return false;
         }
     }

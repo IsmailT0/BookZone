@@ -10,20 +10,21 @@ namespace BookZone.Attributes.PaymentStrategy
 {
     public class CreditCardPayment : IPaymentStrategy
     {
-        private readonly ILogger<CreditCardPayment> _logger;
 
-        public CreditCardPayment(ILogger<CreditCardPayment> logger)
+
+        public CreditCardPayment()
         {
-            _logger = logger;
         }
 
         public Boolean ProcessPayment(decimal amount,decimal receivedAmount)
         {
-            _logger.LogInformation($"Expected payment amount is {amount}");
+            Console.WriteLine($"Expected payment amount is {amount}");
             if(amount == receivedAmount)
             {
+                Console.WriteLine("Payment successful finished using credit card");
                 return true;
             }
+            Console.WriteLine("Payment failed");
             return false;
         }
     }

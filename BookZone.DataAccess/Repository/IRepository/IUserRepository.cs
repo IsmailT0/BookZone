@@ -12,6 +12,5 @@ namespace BookZone.DataAccess.Repository.IRepository
         void Update(User obj);
 
         User GetByEmail(string email);
-        User GetByResetToken(string resetToken);
     }
 }

@@ -9,22 +9,11 @@ namespace BookZone.Areas.Customer.Controllers
     public class PaymentController : Controller
     {
         private readonly PaymentContext _paymentContext;
-        private readonly ILogger<PaymentController> _logger;
-        private readonly CreditCardPayment _creditCardPayment;
-        private readonly PayPalPayment _payPalPayment;
-        private readonly BankTransferPayment _bankTransferPayment;
 
-        public PaymentController(
-            ILogger<PaymentController> logger,
-            CreditCardPayment creditCardPayment,
-            PayPalPayment payPalPayment,
-            BankTransferPayment bankTransferPayment)
+
+        public PaymentController()
         {
-            _logger = logger;
-            _creditCardPayment = creditCardPayment;
-            _payPalPayment = payPalPayment;
-            _bankTransferPayment = bankTransferPayment;
-            _paymentContext = new PaymentContext(_creditCardPayment);
+            _paymentContext = new PaymentContext();
         }
 
         public IActionResult PlaceOrder(decimal totalAmount, decimal receivedAmount)
@@ -41,13 +30,13 @@ namespace BookZone.Areas.Customer.Controllers
             switch (paymentMethod)
             {
                 case "CreditCard":
-                    _paymentContext.SetPaymentStrategy(_creditCardPayment);
+                    _paymentContext.SetPaymentStrategy(new CreditCardPayment());
                     break;
                 case "PayPal":
-                    _paymentContext.SetPaymentStrategy(_payPalPayment);
+                    _paymentContext.SetPaymentStrategy(new PayPalPayment());
                     break;
                 case "BankTransfer":
-                    _paymentContext.SetPaymentStrategy(_bankTransferPayment);
+                    _paymentContext.SetPaymentStrategy(new BankTransferPayment());
                     break;
                 default:
                     return BadRequest("Invalid payment method.");

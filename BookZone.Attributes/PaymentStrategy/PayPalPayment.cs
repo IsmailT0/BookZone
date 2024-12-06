@@ -10,20 +10,19 @@ namespace BookZone.Attributes.PaymentStrategy
 {
     public class PayPalPayment : IPaymentStrategy
     {
-        private readonly ILogger<PayPalPayment> _logger;
 
-        public PayPalPayment(ILogger<PayPalPayment> logger)
-        {
-            _logger = logger;
-        }
+        public PayPalPayment()
+        {}
 
         public Boolean ProcessPayment(decimal amount,decimal receivedAmount)
         {
-            _logger.LogInformation($"Expected payment amount is {amount}");
+            Console.WriteLine($"Expected payment amount is {amount}");
             if (amount == receivedAmount)
             {
+                Console.WriteLine("Payment successful finished using PayPal");
                 return true;
             }
+            Console.WriteLine("Payment failed");
             return false;
         }
     }

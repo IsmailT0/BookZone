@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "eYKHYr3iHvbd9rsoj4L9+LLbkFWS/uxgZQzYuZx4ucQ=",
+  "Hash": "5iudtzKIPTarKE1RAl9diWmL+UUsrXvuk2atL9S2Cz4=",
   "Source": "BookZone",
   "BasePath": "_content/BookZone",
   "Mode": "Default",
@@ -99,6 +99,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\ismai\\Desktop\\Created_API's while_learning\\BookZone\\BookZone\\wwwroot\\images\\product\\10811677-98c6-47bc-948d-c964e040a80e.png",
+      "SourceId": "BookZone",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ismai\\Desktop\\Created_API's while_learning\\BookZone\\BookZone\\wwwroot\\",
+      "BasePath": "_content/BookZone",
+      "RelativePath": "images/product/10811677-98c6-47bc-948d-c964e040a80e#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "ta44cbam0i",
+      "Integrity": "O1mc9TeNoSLcfE9Y8rAt34UeznMLc9ARMpPknARQlxM=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\product\\10811677-98c6-47bc-948d-c964e040a80e.png"
     },
     {
       "Identity": "C:\\Users\\ismai\\Desktop\\Created_API's while_learning\\BookZone\\BookZone\\wwwroot\\images\\product\\11fc8b88-40c3-40cb-8fb6-50a0bd0ce142.jpg",
@@ -1771,6 +1792,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-Jtxf9L+5ITKRc1gIRl4VbUpGkRNfOBXjYTdhJD4facM="
+        }
+      ]
+    },
+    {
+      "Route": "images/product/10811677-98c6-47bc-948d-c964e040a80e.png",
+      "AssetFile": "C:\\Users\\ismai\\Desktop\\Created_API's while_learning\\BookZone\\BookZone\\wwwroot\\images\\product\\10811677-98c6-47bc-948d-c964e040a80e.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "51396"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"O1mc9TeNoSLcfE9Y8rAt34UeznMLc9ARMpPknARQlxM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 05 Dec 2024 10:58:19 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-O1mc9TeNoSLcfE9Y8rAt34UeznMLc9ARMpPknARQlxM="
+        }
+      ]
+    },
+    {
+      "Route": "images/product/10811677-98c6-47bc-948d-c964e040a80e.ta44cbam0i.png",
+      "AssetFile": "C:\\Users\\ismai\\Desktop\\Created_API's while_learning\\BookZone\\BookZone\\wwwroot\\images\\product\\10811677-98c6-47bc-948d-c964e040a80e.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "51396"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"O1mc9TeNoSLcfE9Y8rAt34UeznMLc9ARMpPknARQlxM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 05 Dec 2024 10:58:19 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "ta44cbam0i"
+        },
+        {
+          "Name": "label",
+          "Value": "images/product/10811677-98c6-47bc-948d-c964e040a80e.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-O1mc9TeNoSLcfE9Y8rAt34UeznMLc9ARMpPknARQlxM="
         }
       ]
     },

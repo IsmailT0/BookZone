@@ -13,6 +13,10 @@ namespace BookZone.Attributes.PaymentStrategy
         {
             _paymentStrategy = paymentStrategy;
         }
+        public PaymentContext()
+        {
+            _paymentStrategy = new CreditCardPayment();
+        }
         public Boolean ProcessPayment(decimal amount,decimal receivedAmount)
         {
             return _paymentStrategy.ProcessPayment(amount,receivedAmount);
