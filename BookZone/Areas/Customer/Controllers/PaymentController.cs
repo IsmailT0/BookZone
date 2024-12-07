@@ -19,7 +19,6 @@ namespace BookZone.Areas.Customer.Controllers
         private readonly IUnitOfWork _unitOfWork;
         private ShoppingCartVM _shoppingCartVM;
 
-
         public PaymentController(IUnitOfWork unitOfWork)
         {
             _paymentContext = new PaymentContext();
@@ -55,10 +54,11 @@ namespace BookZone.Areas.Customer.Controllers
             }
         }
 
-
         [HttpPost]
         public IActionResult Payment(string paymentMethod)
         {
+            HttpContext.Session.SetString("PaymentMethod", paymentMethod);
+
             switch (paymentMethod)
             {
                 case "CreditCard":
@@ -102,7 +102,6 @@ namespace BookZone.Areas.Customer.Controllers
             }
         }
 
-
         public IActionResult BankTransferPayment()
         {
             var claimsIdentity = (ClaimsIdentity)User.Identity;
@@ -131,6 +130,7 @@ namespace BookZone.Areas.Customer.Controllers
                 return BadRequest("Invalid user ID");
             }
         }
+
         public IActionResult PaypalPayment()
         {
             var claimsIdentity = (ClaimsIdentity)User.Identity;
@@ -161,7 +161,6 @@ namespace BookZone.Areas.Customer.Controllers
             }
         }
 
-
         [HttpPost]
         public IActionResult PaymentSuccess()
         {
@@ -172,7 +171,6 @@ namespace BookZone.Areas.Customer.Controllers
             {
                 var orderHeader = _unitOfWork.OrderHeader
                     .Get(u => u.UserId == parsedUserId && u.PaymentStatus == SD.PaymentStatusPending);
-
 
                 _shoppingCartVM = new()
                 {
@@ -197,8 +195,25 @@ namespace BookZone.Areas.Customer.Controllers
                 _unitOfWork.ShoppingCart.RemoveRange(shoppingCarts);
                 _unitOfWork.Save();
 
-                decimal recievedAmount = (decimal)_shoppingCartVM.OrderHeader.OrderTotal;
-                _paymentContext.ProcessPayment(recievedAmount,recievedAmount);
+                decimal receivedAmount = (decimal)_shoppingCartVM.OrderHeader.OrderTotal;
+
+                var paymentMethod = HttpContext.Session.GetString("PaymentMethod");
+                switch (paymentMethod)
+                {
+                    case "CreditCard":
+                        _paymentContext.SetPaymentStrategy(new CreditCardPayment());
+                        break;
+                    case "PayPal":
+                        _paymentContext.SetPaymentStrategy(new PayPalPayment());
+                        break;
+                    case "BankTransfer":
+                        _paymentContext.SetPaymentStrategy(new BankTransferPayment());
+                        break;
+                    default:
+                        return BadRequest("Invalid payment method.");
+                }
+
+                _paymentContext.ProcessPayment(receivedAmount, receivedAmount);
                 return View(_shoppingCartVM);
             }
             else
