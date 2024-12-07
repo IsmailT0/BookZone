@@ -1,0 +1,32 @@
+﻿@* @model ShoppingCartVM
+
+<ul class="list-group mb-3">
+    @foreach (var details in Model.ShoppingCartList)
+    {
+        <li class="list-group-item d-flex justify-content-between">
+            <div>
+                <h6 class="my-0">@details.Product.Title</h6>
+                <small class="text-muted">Quantity: @details.Count</small>
+            </div>
+            <span class="text-muted">@((details.Price * details.Count).ToString("c"))</span>
+        </li>
+    }
+
+    <li class="list-group-item d-flex justify-content-between bg-light">
+        <small class="text-info">Total (TL)</small>
+        <strong class="text-info">@Model.OrderHeader.OrderTotal.ToString("c")</strong>
+    </li>
+
+    <!-- Discount Display -->
+
+
+    <!-- Updated Total After Discount -->
+    @if (Model.UpdatedTotal != 0)
+    {
+        <li class="list-group-item d-flex justify-content-between bg-light">
+            <small class="text-info">Updated Total (TL)</small>
+            <strong class="text-info">@Model.UpdatedTotal.ToString("c")</strong>
+        </li>
+    }
+</ul>
+ *@

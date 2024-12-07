@@ -131,7 +131,7 @@ namespace BookZone.Areas.Customer.Controllers
                 _unitOfWork.Save();
             }
 
-            return View(_shoppingCartVM);
+            return RedirectToAction("Payment", "Payment");
         }
 
         

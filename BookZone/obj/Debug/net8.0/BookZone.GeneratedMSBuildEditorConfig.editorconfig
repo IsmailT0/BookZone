@@ -88,8 +88,24 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ3VzdG9tZXJcVmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ismai/Desktop/Created_API's while_learning/BookZone/BookZone/Areas/Customer/Views/Payment/PlaceOrder.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ3VzdG9tZXJcVmlld3NcUGF5bWVudFxQbGFjZU9yZGVyLmNzaHRtbA==
+[C:/Users/ismai/Desktop/Created_API's while_learning/BookZone/BookZone/Areas/Customer/Views/Payment/BankTransferPayment.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ3VzdG9tZXJcVmlld3NcUGF5bWVudFxCYW5rVHJhbnNmZXJQYXltZW50LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ismai/Desktop/Created_API's while_learning/BookZone/BookZone/Areas/Customer/Views/Payment/CreditCardPayment.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ3VzdG9tZXJcVmlld3NcUGF5bWVudFxDcmVkaXRDYXJkUGF5bWVudC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ismai/Desktop/Created_API's while_learning/BookZone/BookZone/Areas/Customer/Views/Payment/Payment.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ3VzdG9tZXJcVmlld3NcUGF5bWVudFxQYXltZW50LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ismai/Desktop/Created_API's while_learning/BookZone/BookZone/Areas/Customer/Views/Payment/PaymentSuccess.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ3VzdG9tZXJcVmlld3NcUGF5bWVudFxQYXltZW50U3VjY2Vzcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ismai/Desktop/Created_API's while_learning/BookZone/BookZone/Areas/Customer/Views/Payment/PaypalPayment.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ3VzdG9tZXJcVmlld3NcUGF5bWVudFxQYXlwYWxQYXltZW50LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/ismai/Desktop/Created_API's while_learning/BookZone/BookZone/Areas/Customer/Views/ShoppingCart/Index.cshtml]
@@ -98,6 +114,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/ismai/Desktop/Created_API's while_learning/BookZone/BookZone/Areas/Customer/Views/ShoppingCart/Summary.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ3VzdG9tZXJcVmlld3NcU2hvcHBpbmdDYXJ0XFN1bW1hcnkuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ismai/Desktop/Created_API's while_learning/BookZone/BookZone/Areas/Customer/Views/ShoppingCart/_ShoppingCartSummary.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ3VzdG9tZXJcVmlld3NcU2hvcHBpbmdDYXJ0XF9TaG9wcGluZ0NhcnRTdW1tYXJ5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/ismai/Desktop/Created_API's while_learning/BookZone/BookZone/Areas/Customer/Views/_ViewImports.cshtml]
