@@ -11,7 +11,7 @@ namespace BookZone.DataAccess.Repository.IRepository
     {
         //T - Category
         IEnumerable<T> GetAll(Expression<Func<T, bool>>?  filter = null, string? includeProperties = null);
-        T Get(Expression<Func<T, bool>> filter, string? includeProperties = null,bool tracked =false);//to get operation where output is boolean
+        T Get(Expression<Func<T, bool>> filter, string? includeProperties = null,bool tracked =false);//we use expression to filter the data
         void Add(T entity);
         void Remove(T entity);
         void RemoveRange(IEnumerable<T> entity);

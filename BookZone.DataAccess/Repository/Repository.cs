@@ -23,11 +23,14 @@ namespace BookZone.DataAccess.Repository
             _db.Products.Include(u => u.Category);
         }
 
+        //add the entity to the database
         public void Add(T entity)
         {
             dbSet.Add(entity);
         }
 
+
+        //gets the entity from the database based on the filter
         public T Get(Expression<Func<T, bool>> filter, string? includeProperties = null, bool tracked = false)
         {
             IQueryable<T> query;
@@ -55,6 +58,7 @@ namespace BookZone.DataAccess.Repository
 
         }
 
+        //gets all the entities from the database based on the filter
         public IEnumerable<T> GetAll(Expression<Func<T, bool>>? filter = null, string? includeProperties = null)
         {
             IQueryable<T> query = dbSet;
@@ -73,11 +77,13 @@ namespace BookZone.DataAccess.Repository
             return query.ToList();
         }
 
+        //removes the entity from the database
         public void Remove(T entity)
         {
             dbSet.Remove(entity);
         }
 
+        //removes the range of entities from the database
         public void RemoveRange(IEnumerable<T> entity)
         {
             dbSet.RemoveRange(entity);

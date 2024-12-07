@@ -20,12 +20,15 @@ namespace BookZone.Areas.Customer.Controllers
             _unitOfWork = unitOfWork;
         }
 
+        // GET : Index list of products
         public IActionResult Index()
         {
             IEnumerable<Product> productList = _unitOfWork.Product.GetAll(includeProperties: "Category");
             return View(productList);
         }
 
+
+        // GET: Details of a product
         public IActionResult Details(int productId)
         {
             ShoppingCart shoppingCart = new ShoppingCart
@@ -51,7 +54,7 @@ namespace BookZone.Areas.Customer.Controllers
             }
             else
             {
-                // Handle the case where userId is not a valid int
+                
                 return BadRequest("Invalid user ID");
             }
 

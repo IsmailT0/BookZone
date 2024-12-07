@@ -8,24 +8,12 @@ using Microsoft.Extensions.Logging;
 
 namespace BookZone.Attributes.PaymentStrategy
 {
-    public class CreditCardPayment : IPaymentStrategy
+    public class CreditCardPayment : PaymentStrategy
     {
-
-
-        public CreditCardPayment()
+        public override bool ProcessPayment(decimal amount, decimal receivedAmount)
         {
-        }
-
-        public Boolean ProcessPayment(decimal amount,decimal receivedAmount)
-        {
-            Console.WriteLine($"Expected payment amount is {amount}");
-            if(amount == receivedAmount)
-            {
-                Console.WriteLine("Payment successful finished using credit card");
-                return true;
-            }
-            Console.WriteLine("Payment failed");
-            return false;
+            Console.WriteLine("Processing payment through Credit Card...");
+            return receivedAmount == amount;
         }
     }
 }

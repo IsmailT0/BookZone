@@ -22,6 +22,8 @@ namespace BookZone.Areas.Admin.Controllers
             _productNotifier = new ProductNotifier();
         }
 
+
+        // GET list of products
         public IActionResult Index()
         {
             List<Product> objProductList = _unitOfWork.Product.GetAll(includeProperties: "Category").ToList();// the includeProperties parameter is used to include the Category navigation property in the query
@@ -29,7 +31,7 @@ namespace BookZone.Areas.Admin.Controllers
         }
 
 
-
+        // GET create product
         public IActionResult Upsert(int? id)
         {
             ProductVM productVM = new()
@@ -54,7 +56,10 @@ namespace BookZone.Areas.Admin.Controllers
             }
 
         }
-        
+
+
+        // POST create product
+
         [HttpPost]
         public IActionResult Upsert(ProductVM productVM, IFormFile? file)
         {
@@ -66,6 +71,8 @@ namespace BookZone.Areas.Admin.Controllers
                     string fileName = Guid.NewGuid().ToString() + Path.GetExtension(file.FileName);
                     string productPath = Path.Combine(wwwRootPath, @"images\product");
 
+
+                    // Check if the product directory exists
                     if (!string.IsNullOrEmpty(productVM.Product.ImageUrl))
                     {
                         // Delete the old image
@@ -77,6 +84,8 @@ namespace BookZone.Areas.Admin.Controllers
                         }
                     }
 
+
+                    // Create the product directory if it doesn't exist
                     using (var fileStream = new FileStream(Path.Combine(productPath, fileName), FileMode.Create))
                     {
                         file.CopyTo(fileStream);
@@ -131,6 +140,8 @@ namespace BookZone.Areas.Admin.Controllers
 
 
 
+        // POST delete product
+
         [HttpPost]
         public IActionResult Delete(int? id)
         {
@@ -155,6 +166,8 @@ namespace BookZone.Areas.Admin.Controllers
                 }
             }
 
+
+            // Delete the product from the database
             _unitOfWork.Product.Remove(product);
             _unitOfWork.Save();
             TempData["success"] = "Product deleted successfully";

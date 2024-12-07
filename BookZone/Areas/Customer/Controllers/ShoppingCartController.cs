@@ -20,6 +20,8 @@ namespace BookZone.Areas.Customer.Controllers
             _unitOfWork = unitOfWork;
         }
 
+
+        // GET: ShoppingCartController
         public IActionResult Index()
         {
             var claimsIdentity = (ClaimsIdentity)User.Identity;
@@ -27,18 +29,24 @@ namespace BookZone.Areas.Customer.Controllers
 
             if (int.TryParse(userId, out int parsedUserId))
             {
+
+                // Get all shopping cart items for the current user
                 _shoppingCartVM = new ()
                 {
                     ShoppingCartList = _unitOfWork.ShoppingCart.GetAll(u => u.ApplicationUserId == parsedUserId, includeProperties: "Product"),
                     OrderHeader = new OrderHeader()
                 };
+
+
             }
             else
             {
-                // Handle the case where userId is not a valid int
+                
                 return BadRequest("Invalid user ID");
             }
 
+
+            // Get the user details
             foreach (var cart in _shoppingCartVM.ShoppingCartList)
             {
                cart.Price = calculateOrderTotal(cart);
@@ -59,6 +67,8 @@ namespace BookZone.Areas.Customer.Controllers
 
             if (int.TryParse(userId, out int parsedUserId))
             {
+
+                //create the shopping cart view model for the current user
                 _shoppingCartVM = new()
                 {
                     ShoppingCartList = _unitOfWork.ShoppingCart.GetAll(u => u.ApplicationUserId == parsedUserId, includeProperties: "Product"),
@@ -67,13 +77,10 @@ namespace BookZone.Areas.Customer.Controllers
             }
             else
             {
-                // Handle the case where userId is not a valid int
                 return BadRequest("Invalid user ID");
             }
 
             _shoppingCartVM.OrderHeader.User = _unitOfWork.Users.Get(u => u.Id == parsedUserId);
-
-
 
 
             foreach (var cart in _shoppingCartVM.ShoppingCartList)
@@ -85,6 +92,8 @@ namespace BookZone.Areas.Customer.Controllers
             return View(_shoppingCartVM);
         }
 
+
+        // POST: ShoppingCartController/Summary
         [HttpPost]
         [ActionName("Summary")]
         public IActionResult SummaryPost()
@@ -102,21 +111,30 @@ namespace BookZone.Areas.Customer.Controllers
                 return BadRequest("Invalid user ID");
             }
 
+            // Create the order header
             _shoppingCartVM.OrderHeader.UserId = parsedUserId;
             _shoppingCartVM.OrderHeader.OrderDate = System.DateTime.Now;
 
+
+            // Calculate the order total
             foreach (var cart in _shoppingCartVM.ShoppingCartList)
             {
                 cart.Price = calculateOrderTotal(cart);
                 _shoppingCartVM.OrderHeader.OrderTotal += (cart.Price * cart.Count);
             }
 
+
+            // Save the order header to the database
             _shoppingCartVM.OrderHeader.PaymentStatus = SD.PaymentStatusPending;
             _shoppingCartVM.OrderHeader.OrderStatus = SD.StatusPending;
 
+
+            // Add the order header to the database
             _unitOfWork.OrderHeader.Add(_shoppingCartVM.OrderHeader);
             _unitOfWork.Save();
 
+
+            // Add the order details to the database
             foreach (var cart in _shoppingCartVM.ShoppingCartList)
             {
                 OrderDetail orderDetail = new OrderDetail
@@ -131,12 +149,14 @@ namespace BookZone.Areas.Customer.Controllers
                 _unitOfWork.Save();
             }
 
+
+            // go to the payment page
             return RedirectToAction("Payment", "Payment");
         }
 
-        
 
 
+        // Increases the count of a product in the shopping cart
         public IActionResult Plus(int cartId)
         {
             var cart = _unitOfWork.ShoppingCart.Get(u => u.Id == cartId);
@@ -146,6 +166,7 @@ namespace BookZone.Areas.Customer.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+        // Decreases the count of a product in the shopping cart
         public IActionResult Minus(int cartId)
         {
             var cartFromDb = _unitOfWork.ShoppingCart.Get(u => u.Id == cartId);
@@ -156,6 +177,7 @@ namespace BookZone.Areas.Customer.Controllers
             }
             else
             {
+                // Remove the product from the shopping cart if the count is 1
                 _unitOfWork.ShoppingCart.Remove(cartFromDb);
             }
 
@@ -164,6 +186,8 @@ namespace BookZone.Areas.Customer.Controllers
         }
 
 
+
+        // Removes a product from the shopping cart
         public IActionResult Remove(int cartId)
         {
             var cart = _unitOfWork.ShoppingCart.Get(u => u.Id == cartId);
@@ -172,7 +196,7 @@ namespace BookZone.Areas.Customer.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-
+        //calculate the total price of the order
         private double calculateOrderTotal(ShoppingCart shoppingCart)
         {
             if (shoppingCart.Count <= 50)

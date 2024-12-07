@@ -1,28 +1,30 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BookZone.Attributes.PaymentStrategy
 {
     public class PaymentContext
     {
-        private IPaymentStrategy _paymentStrategy;
-        public PaymentContext(IPaymentStrategy paymentStrategy)
+        private PaymentStrategy _paymentStrategy;
+
+        public PaymentContext(PaymentStrategy paymentStrategy)
         {
             _paymentStrategy = paymentStrategy;
         }
+
         public PaymentContext()
         {
-            _paymentStrategy = new CreditCardPayment();
-        }
-        public Boolean ProcessPayment(decimal amount,decimal receivedAmount)
-        {
-            return _paymentStrategy.ProcessPayment(amount,receivedAmount);
+            _paymentStrategy = new CreditCardPayment(); // Default strategy
         }
 
-        public void SetPaymentStrategy(IPaymentStrategy paymentStrategy)
+        // Execute payment process
+        public bool ExecutePayment(decimal amount, decimal receivedAmount)
+        {
+            return _paymentStrategy.ExecutePayment(amount, receivedAmount);
+        }
+
+
+        // Set payment strategy at runtime
+        public void SetPaymentStrategy(PaymentStrategy paymentStrategy)
         {
             _paymentStrategy = paymentStrategy;
         }

@@ -14,16 +14,23 @@ namespace BookZone.Areas.Admin.Controllers
         {
             _unitOfWork = unitOfWork;
         }
+
+
+        // GET list of categories
         public IActionResult Index()
         {
             List<Category> objCategoryList = _unitOfWork.Category.GetAll().ToList();
             return View(objCategoryList);
         }
 
+
+        // GET create category
         public IActionResult Create()
         {
             return View();
         }
+
+        // POST create category 
         [HttpPost]
         public IActionResult Create(Category obj)
         {
@@ -43,6 +50,8 @@ namespace BookZone.Areas.Admin.Controllers
 
         }
 
+
+        // GET edit category
         public IActionResult Edit(int? id)
         {
             if (id == null || id == 0)
@@ -59,6 +68,9 @@ namespace BookZone.Areas.Admin.Controllers
             }
             return View(categoryFromDb);
         }
+
+
+        // POST edit category
         [HttpPost]
         public IActionResult Edit(Category obj)
         {
@@ -73,6 +85,8 @@ namespace BookZone.Areas.Admin.Controllers
 
         }
 
+
+        // GET delete category
         public IActionResult Delete(int? id)
         {
             if (id == null || id == 0)
@@ -89,6 +103,9 @@ namespace BookZone.Areas.Admin.Controllers
             }
             return View(categoryFromDb);
         }
+
+
+        // POST delete category we use action name to avoid confusion with the get method
         [HttpPost, ActionName("Delete")]
         public IActionResult DeletePOST(int? id)
         {

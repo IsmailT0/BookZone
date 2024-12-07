@@ -25,6 +25,8 @@ namespace BookZone.Areas.Customer.Controllers
             _unitOfWork = unitOfWork;
         }
 
+
+        // GET: Payment
         public IActionResult Payment()
         {
             var claimsIdentity = (ClaimsIdentity)User.Identity;
@@ -40,7 +42,7 @@ namespace BookZone.Areas.Customer.Controllers
 
                 foreach (var cart in _shoppingCartVM.ShoppingCartList)
                 {
-                    cart.Price = calculateOrderTotal(cart);
+                    cart.Price = CalculateOrderTotal(cart);
                     _shoppingCartVM.OrderHeader.OrderTotal += (cart.Price * cart.Count);
                 }
 
@@ -54,6 +56,8 @@ namespace BookZone.Areas.Customer.Controllers
             }
         }
 
+
+        // POST: Payment according to the selected method it will redirect to the respective payment method
         [HttpPost]
         public IActionResult Payment(string paymentMethod)
         {
@@ -72,6 +76,8 @@ namespace BookZone.Areas.Customer.Controllers
             }
         }
 
+
+        // GET: CreditCardPayment
         public IActionResult CreditCardPayment()
         {
             var claimsIdentity = (ClaimsIdentity)User.Identity;
@@ -87,13 +93,13 @@ namespace BookZone.Areas.Customer.Controllers
 
                 foreach (var cart in _shoppingCartVM.ShoppingCartList)
                 {
-                    cart.Price = calculateOrderTotal(cart);
+                    cart.Price = CalculateOrderTotal(cart);
                     _shoppingCartVM.OrderHeader.OrderTotal += (cart.Price * cart.Count);
                 }
 
-                HttpContext.Session.SetString("OrderTotal", _shoppingCartVM.OrderHeader.OrderTotal.ToString());
+                HttpContext.Session.SetString("OrderTotal", _shoppingCartVM.OrderHeader.OrderTotal.ToString());//  Set order total in session
 
-                _paymentContext.SetPaymentStrategy(new CreditCardPayment());
+                _paymentContext.SetPaymentStrategy(new CreditCardPayment());// Set payment strategy
                 return View(_shoppingCartVM);
             }
             else
@@ -102,6 +108,8 @@ namespace BookZone.Areas.Customer.Controllers
             }
         }
 
+
+        // GET: BankTransferPayment
         public IActionResult BankTransferPayment()
         {
             var claimsIdentity = (ClaimsIdentity)User.Identity;
@@ -117,12 +125,13 @@ namespace BookZone.Areas.Customer.Controllers
 
                 foreach (var cart in _shoppingCartVM.ShoppingCartList)
                 {
-                    cart.Price = calculateOrderTotal(cart);
+                    cart.Price = CalculateOrderTotal(cart);
                     _shoppingCartVM.OrderHeader.OrderTotal += (cart.Price * cart.Count);
                 }
 
-                HttpContext.Session.SetString("OrderTotal", _shoppingCartVM.OrderHeader.OrderTotal.ToString());
-                _paymentContext.SetPaymentStrategy(new BankTransferPayment());
+                HttpContext.Session.SetString("OrderTotal", _shoppingCartVM.OrderHeader.OrderTotal.ToString());//  Set order total in session
+
+                _paymentContext.SetPaymentStrategy(new BankTransferPayment());// Set payment strategy
                 return View(_shoppingCartVM);
             }
             else
@@ -131,6 +140,8 @@ namespace BookZone.Areas.Customer.Controllers
             }
         }
 
+
+        // GET: PaypalPayment
         public IActionResult PaypalPayment()
         {
             var claimsIdentity = (ClaimsIdentity)User.Identity;
@@ -146,13 +157,15 @@ namespace BookZone.Areas.Customer.Controllers
 
                 foreach (var cart in _shoppingCartVM.ShoppingCartList)
                 {
-                    cart.Price = calculateOrderTotal(cart);
+                    cart.Price = CalculateOrderTotal(cart);
                     _shoppingCartVM.OrderHeader.OrderTotal += (cart.Price * cart.Count);
                 }
 
-                HttpContext.Session.SetString("OrderTotal", _shoppingCartVM.OrderHeader.OrderTotal.ToString());
+                HttpContext.Session.SetString("OrderTotal", _shoppingCartVM.OrderHeader.OrderTotal.ToString());//  Set order total in session
 
-                _paymentContext.SetPaymentStrategy(new PayPalPayment());
+
+
+                _paymentContext.SetPaymentStrategy(new PayPalPayment());//  Set payment strategy
                 return View(_shoppingCartVM);
             }
             else
@@ -161,6 +174,8 @@ namespace BookZone.Areas.Customer.Controllers
             }
         }
 
+
+        // POST: PaymentSuccess
         [HttpPost]
         public IActionResult PaymentSuccess()
         {
@@ -198,6 +213,8 @@ namespace BookZone.Areas.Customer.Controllers
                 decimal receivedAmount = (decimal)_shoppingCartVM.OrderHeader.OrderTotal;
 
                 var paymentMethod = HttpContext.Session.GetString("PaymentMethod");
+
+                // Set payment strategy
                 switch (paymentMethod)
                 {
                     case "CreditCard":
@@ -213,7 +230,7 @@ namespace BookZone.Areas.Customer.Controllers
                         return BadRequest("Invalid payment method.");
                 }
 
-                _paymentContext.ProcessPayment(receivedAmount, receivedAmount);
+                _paymentContext.ExecutePayment(receivedAmount, receivedAmount);// Execute payment
                 return View(_shoppingCartVM);
             }
             else
@@ -222,7 +239,9 @@ namespace BookZone.Areas.Customer.Controllers
             }
         }
 
-        private double calculateOrderTotal(ShoppingCart shoppingCart)
+
+        // calculates total order for the given shopping cart
+        private double CalculateOrderTotal(ShoppingCart shoppingCart)
         {
             if (shoppingCart.Count <= 50)
             {
